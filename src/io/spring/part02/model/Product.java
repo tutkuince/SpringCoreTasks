@@ -1,6 +1,6 @@
 package io.spring.part02.model;
 
-public class Product {
+public abstract class Product {
 	private String name;
 	private double price;
 
