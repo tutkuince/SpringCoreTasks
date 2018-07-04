@@ -16,5 +16,16 @@ public class Problem01 {
 	 *             instantiate the Spring IoC container to scan for Java classes
 	 *             with annotations. The POJO instances or bean instances then
 	 *             become accessible to put together as part of an application.
+	 * 
+	 * 
+	 *             How It Works
+	 * 
+	 *             Suppose you’re going to develop an application to generate
+	 *             sequence numbers and you are going to need many series of
+	 *             sequence numbers for different purposes. Each sequence will have
+	 *             its own prefix, suffix, and initial values. So, you have to
+	 *             create and maintain multiple generator instances for the
+	 *             application. Create a POJO class to create beans with a Java
+	 *             config.
 	 */
 }
