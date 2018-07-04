@@ -1,18 +1,18 @@
 package io.spring.part01;
 
 public class SequenceGenerator {
-	private int id;
-	private String prefix;
-	private String suffix;
+	private final String id;
+	private final String prefix;
+	private final String suffix;
 
-	public SequenceGenerator(int id, String prefix, String suffix) {
+	public SequenceGenerator(String id, String prefix, String suffix) {
 		super();
 		this.id = id;
 		this.prefix = prefix;
 		this.suffix = suffix;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
