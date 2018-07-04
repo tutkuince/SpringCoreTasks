@@ -1,27 +1,35 @@
 package io.spring.part01;
 
-public class SequenceGenerator {
-	private final String id;
-	private final String prefix;
-	private final String suffix;
+import java.util.concurrent.atomic.AtomicInteger;
 
-	public SequenceGenerator(String id, String prefix, String suffix) {
-		super();
-		this.id = id;
+public class SequenceGenerator {
+	private String prefix;
+	private String suffix;
+	private int initial;
+
+	// store the numeric value of each generator
+	private final AtomicInteger counter = new AtomicInteger();
+
+	public SequenceGenerator() {
+
+	}
+
+	public void setPrefix(String prefix) {
 		this.prefix = prefix;
+	}
+
+	public void setSuffix(String suffix) {
 		this.suffix = suffix;
 	}
 
-	public String getId() {
-		return id;
+	public void setInitial(int initial) {
+		this.initial = initial;
 	}
 
-	public String getPrefix() {
-		return prefix;
+	// get the last sequence number with the prefix and suffix joined.
+	public String getSequence() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(prefix).append(initial).append(counter.getAndIncrement()).append(suffix);
+		return builder.toString();
 	}
-
-	public String getSuffix() {
-		return suffix;
-	}
-
 }
