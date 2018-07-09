@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.io.Resource;
 
 import io.spring.part05.model.Disc;
 import io.spring.part05.model.Product;
@@ -18,6 +19,9 @@ import io.spring.part05.model.Product;
 @ComponentScan(basePackages = "io.spring.part05")
 public class ShopConfiguration {
 
+	@Value("classpath:banner.txt")
+	private Resource banner;
+	
 	@Value("${endofyear.discount:0}")
 	private double specialEndofyearDiscountField;
 
