@@ -11,7 +11,10 @@ import io.spring.part05.model.Disc;
 import io.spring.part05.model.Product;
 
 @Configuration
-@PropertySource("classpath:discounts.properties")
+@PropertySource("classpath:discounts.properties") // Once you define the @PropertySource annotation to load the
+													// properties file, you also need to define
+													// aPropertySourcePlaceholderConfigurer bean with the @Bean
+													// annotation.
 @ComponentScan(basePackages = "io.spring.part05")
 public class ShopConfiguration {
 
