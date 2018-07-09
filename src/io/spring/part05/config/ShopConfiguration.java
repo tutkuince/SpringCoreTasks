@@ -12,7 +12,7 @@ import io.spring.part05.model.Disc;
 import io.spring.part05.model.Product;
 
 @Configuration
-@PropertySource("classpath:discounts.properties") // Once you define the @PropertySource annotation to load the
+@PropertySource("classpath:io/spring/part05/resources/discounts.properties") // Once you define the @PropertySource annotation to load the
 													// properties file, you also need to define
 													// aPropertySourcePlaceholderConfigurer bean with the @Bean
 													// annotation.
