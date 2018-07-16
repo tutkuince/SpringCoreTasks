@@ -13,7 +13,7 @@ import io.spring.part07.model.Product;
 @Configuration
 public class ShopConfiguration {
 
-	@Bean	// instance factory method
+	@Bean // instance factory method
 	public ProductCreator productCreatorFactory() {
 		ProductCreator factory = new ProductCreator();
 		Map<String, Product> products = new HashMap<>();
@@ -21,6 +21,30 @@ public class ShopConfiguration {
 		products.put("cdrw", new Disc("CD-EW", 1.5, 0));
 		products.put("dvdrw", new Disc("DVD-RW", 3.0, 0));
 		factory.setProducts(products);
+		return factory;
+	}
+
+	@Bean
+	public DiscountFactoryBean discountFactoryBeanAAA() {
+		DiscountFactoryBean factory = new DiscountFactoryBean();
+		factory.setProduct(aaa());
+		factory.setDiscount(0.2);
+		return factory;
+	}
+
+	@Bean
+	public DiscountFactoryBean discountFactoryBeanCDRW() {
+		DiscountFactoryBean factory = new DiscountFactoryBean();
+		factory.setProduct(cdrw());
+		factory.setDiscount(0.1);
+		return factory;
+	}
+
+	@Bean
+	public DiscountFactoryBean discountFactoryBeanDVDRW() {
+		DiscountFactoryBean factory = new DiscountFactoryBean();
+		factory.setProduct(dvdrw());
+		factory.setDiscount(0.1);
 		return factory;
 	}
 
